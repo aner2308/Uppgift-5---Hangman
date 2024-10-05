@@ -24,9 +24,9 @@ namespace Hangman
             hardFruits = new string[] { "pomegranate", "watermelon", "blackcurrant", "dragonfruit", "rockmelon", "honeydew" };
 
             // Djurkategori
-            easyAnimals = new string[] { "cat", "dog", "fox", "rat" };
-            mediumAnimals = new string[] { "elephant", "giraffe", "dolphin", "kangaroo" };
-            hardAnimals = new string[] { "chameleon", "rhinoceros", "hippopotamus", "crocodile" };
+            easyAnimals = new string[] { "cat", "dog", "fox", "rat", "snake" };
+            mediumAnimals = new string[] { "elephant", "giraffe", "dolphin", "kangaroo", "octopus" };
+            hardAnimals = new string[] { "chameleon", "rhinoceros", "hippopotamus", "crocodile", "caribou" };
 
             // Huvudstäder
             easyCities = new string[] { "Paris", "London", "Oslo", "Berlin" };
@@ -81,7 +81,7 @@ namespace Hangman
                         default:
                             throw new ArgumentException("Unavailable choice. Please choose between 'easy', 'medium' or 'hard'.");
                     }
-                    
+
                 default:
                     throw new ArgumentException("Unavailable choice. Please choose between option [1], [2] and [3]");
             }

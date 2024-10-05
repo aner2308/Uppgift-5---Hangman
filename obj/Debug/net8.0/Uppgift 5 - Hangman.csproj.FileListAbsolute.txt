@@ -12,3 +12,4 @@ c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.
 c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.pdb
 c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.genruntimeconfig.cache
 c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\ref\Uppgift 5 - Hangman.dll
+C:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.sourcelink.json

@@ -6,20 +6,27 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen till Hangman!\n");
+            Console.WriteLine("Welcome to Hangman!\n");
+
+            Console.WriteLine("Choose a category.\n");
+            Console.WriteLine("[1] Fruits");
+            Console.WriteLine("[2] Animals");
+            Console.WriteLine("[3] Capital cities\n");
+
+            string category = Console.ReadLine();
 
             Console.WriteLine("Choose a difficulty.\n");
             Console.WriteLine("[1] Easy");
             Console.WriteLine("[2] Medium");
-            Console.WriteLine("[3] Hard");
+            Console.WriteLine("[3] Hard\n");
 
             string difficulty = Console.ReadLine();
 
             WordGenerator generatedWord = new WordGenerator();
 
-            string randomWord = generatedWord.GetRandomWord(difficulty);
+            string randomWord = generatedWord.GetRandomWord(category, difficulty);
 
-            Console.WriteLine($"{randomWord}");
+            Console.WriteLine($"The random word in the cateory of {category} and the difficulty {difficulty} is: {randomWord}");
         }
     }
 }

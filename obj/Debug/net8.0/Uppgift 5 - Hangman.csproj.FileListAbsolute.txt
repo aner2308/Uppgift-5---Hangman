@@ -1,0 +1,14 @@
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\bin\Debug\net8.0\Uppgift 5 - Hangman.exe
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\bin\Debug\net8.0\Uppgift 5 - Hangman.deps.json
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\bin\Debug\net8.0\Uppgift 5 - Hangman.runtimeconfig.json
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\bin\Debug\net8.0\Uppgift 5 - Hangman.dll
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\bin\Debug\net8.0\Uppgift 5 - Hangman.pdb
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.AssemblyInfoInputs.cache
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.AssemblyInfo.cs
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.csproj.CoreCompileInputs.cache
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.dll
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\refint\Uppgift 5 - Hangman.dll
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.pdb
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\Uppgift 5 - Hangman.genruntimeconfig.cache
+c:\Users\eriks\Desktop\Skola\Termin 3\C#.NET\Uppgift 5 - Hangman\obj\Debug\net8.0\ref\Uppgift 5 - Hangman.dll

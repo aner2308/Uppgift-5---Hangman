@@ -6,7 +6,9 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Hangman!\n");
+            Console.WriteLine("╔═════════════════╗");
+            Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+            Console.WriteLine("╚═════════════════╝\n");
 
             Console.WriteLine("Choose a category.\n");
             Console.WriteLine("[1] Fruits");

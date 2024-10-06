@@ -6,35 +6,43 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            bool playing = true;
+            Console.Clear();
+            Console.WriteLine("╔═════════════════╗");
+            Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+            Console.WriteLine("╚═════════════════╝\n");
 
-            while (playing)
+            Console.Write("Enter player name: ");
+            string? playerName = Console.ReadLine();
+
+            if (!string.IsNullOrWhiteSpace(playerName))
             {
-                Console.Clear();
-                Console.WriteLine("╔═════════════════╗");
-                Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
-                Console.WriteLine("╚═════════════════╝\n");
-
-                Console.Write("Enter player name: ");
-                string? playerName = Console.ReadLine();
-
-                if (!string.IsNullOrWhiteSpace(playerName))
-                {
-                    PlayGame(playerName);
-                    playing = AskToPlayAgain();  // Lägger till valet att spela igen
-                }
-                else
-                {
-                    Console.WriteLine("Player name not found.");
-                    playing = false;  // Avslutar spelet om inget namn anges
-                }
+                StartGame(playerName);
             }
-
-            Console.WriteLine("Thanks for playing!");
+            else
+            {
+                Console.WriteLine("Player name not found.");
+            }
         }
 
-        static void PlayGame(string playerName)
+        public static void StartGame(string playerName) // Gjorde metoden statisk
         {
+            Console.Clear();
+            Console.WriteLine("Choose mode:");
+            Console.WriteLine("[1] Play yourself");
+            Console.WriteLine("[2] Let AI play");
+
+            string choice = Console.ReadLine();
+            Player player;
+
+            if (choice == "1")
+            {
+                player = new HumanPlayer(playerName);
+            }
+            else
+            {
+                player = new AIPlayer($"{playerName} AI");
+            }
+
             string category = ChooseCategory();
             string difficulty = ChooseDifficulty();
 
@@ -42,33 +50,8 @@ namespace Hangman
             WordGenerator generatedWord = new();
             string randomWord = generatedWord.GetRandomWord(category, difficulty);
 
-            Game game = new(playerName, randomWord, category);
+            Game game = new(player, randomWord, category);
             game.Start();
-        }
-
-        // Metod för att fråga om användaren vill spela igen
-        static bool AskToPlayAgain()
-        {
-            while (true)
-            {
-                Console.WriteLine("\nWould you like to play again?");
-                Console.WriteLine("[1] Yes");
-                Console.WriteLine("[2] No");
-                string? choice = Console.ReadLine();
-
-                if (choice == "1")
-                {
-                    return true;  // Spela igen
-                }
-                else if (choice == "2")
-                {
-                    return false;  // Avsluta spelet
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input. Please choose between [1] and [2].");
-                }
-            }
         }
 
         // Metod för att välja kategori
@@ -76,6 +59,7 @@ namespace Hangman
         {
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("\nChoose a category.\n");
                 Console.WriteLine("[1] Fruits");
                 Console.WriteLine("[2] Animals");
@@ -84,7 +68,6 @@ namespace Hangman
                 string? category = Console.ReadLine();
                 Console.WriteLine("");
 
-                // Kontrollerar om inmatningen är korrekt
                 if (category == "1" || category == "2" || category == "3")
                 {
                     return category; // Returnerar om det är ett giltigt val
@@ -101,6 +84,7 @@ namespace Hangman
         {
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("\nChoose a difficulty.\n");
                 Console.WriteLine("[1] Easy");
                 Console.WriteLine("[2] Medium");
@@ -109,9 +93,9 @@ namespace Hangman
                 string? difficulty = Console.ReadLine();
                 Console.WriteLine("");
 
-                //Kontrollerar om inmatning är korrekt
                 if (difficulty == "1" || difficulty == "2" || difficulty == "3")
                 {
+                    Console.Clear();
                     return difficulty; // Returnerar om det är ett giltigt val
                 }
                 else

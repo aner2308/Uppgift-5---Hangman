@@ -19,19 +19,19 @@ namespace Hangman
         public WordGenerator()
         {
             //Fruktkategori
-            easyFruits = new string[] { "apple", "banana", "grape", "pear", "kiwi" };
-            mediumFruits = new string[] { "pineapple", "strawberry", "blueberry", "orange", "raspberry" };
-            hardFruits = new string[] { "pomegranate", "watermelon", "blackcurrant", "dragonfruit", "rockmelon", "honeydew" };
+            easyFruits = ["apple", "banana", "grape", "pear", "kiwi"];
+            mediumFruits = ["pineapple", "strawberry", "blueberry", "orange", "raspberry"];
+            hardFruits = ["pomegranate", "watermelon", "blackcurrant", "dragonfruit", "rockmelon", "honeydew"];
 
             // Djurkategori
-            easyAnimals = new string[] { "cat", "dog", "fox", "rat", "snake" };
-            mediumAnimals = new string[] { "elephant", "giraffe", "dolphin", "kangaroo", "octopus" };
-            hardAnimals = new string[] { "chameleon", "rhinoceros", "hippopotamus", "crocodile", "caribou" };
+            easyAnimals = ["cat", "dog", "fox", "rat", "snake"];
+            mediumAnimals = ["elephant", "giraffe", "dolphin", "kangaroo", "octopus"];
+            hardAnimals = ["chameleon", "rhinoceros", "hippopotamus", "crocodile", "caribou"];
 
             // Huvudstäder
-            easyCities = new string[] { "Paris", "London", "Oslo", "Berlin" };
-            mediumCities = new string[] { "Stockholm", "Budapest", "Lisbon", "Vienna", "Helsinki" };
-            hardCities = new string[] { "Ouagadougou", "Thimphu", "Ulaanbaatar", "Antanarivo" };
+            easyCities = ["paris", "london", "oslo", "berlin"];
+            mediumCities = ["stockholm", "budapest", "lisbon", "vienna", "helsinki"];
+            hardCities = ["ouagadougou", "thimphu", "ulaanbaatar", "antanarivo"];
         }
 
         public string GetRandomWord(string category, string difficulty)

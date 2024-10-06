@@ -82,12 +82,12 @@ namespace Hangman
 
                     if (guessedWord == wordToGuess)
                     {
-                        
-                        Console.Clear();
-                        Console.WriteLine("Congratulations! You did it!");
-                        Console.WriteLine($"the word was: {wordToGuess}");
+                        Console.WriteLine("\nCongratulations! You have guessed the word!\n");
+                        Console.WriteLine($"<| {wordToGuess.ToUpper()} |>\n");
 
+                        break;  // Avslutar spelet här, och vi hanterar spelets omstart i `Main`
                     }
+
                     message = "Your guess was correct!";
                 }
 

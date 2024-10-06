@@ -6,22 +6,31 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            Console.Clear();
-            Console.WriteLine("╔═════════════════╗");
-            Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
-            Console.WriteLine("╚═════════════════╝\n");
+            bool playing = true;
 
-            Console.Write("Enter player name: ");
-            string? playerName = Console.ReadLine();
+            while (playing)
+            {
+                Console.Clear();
+                Console.WriteLine("╔═════════════════╗");
+                Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+                Console.WriteLine("╚═════════════════╝\n");
 
-            if (!string.IsNullOrWhiteSpace(playerName))
-            {
-                PlayGame(playerName);
+                Console.Write("Enter player name: ");
+                string? playerName = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(playerName))
+                {
+                    PlayGame(playerName);
+                    playing = AskToPlayAgain();  // Lägger till valet att spela igen
+                }
+                else
+                {
+                    Console.WriteLine("Player name not found.");
+                    playing = false;  // Avslutar spelet om inget namn anges
+                }
             }
-            else
-            {
-                Console.WriteLine("Player name not found.");
-            }
+
+            Console.WriteLine("Thanks for playing!");
         }
 
         static void PlayGame(string playerName)
@@ -35,6 +44,31 @@ namespace Hangman
 
             Game game = new(playerName, randomWord, category);
             game.Start();
+        }
+
+        // Metod för att fråga om användaren vill spela igen
+        static bool AskToPlayAgain()
+        {
+            while (true)
+            {
+                Console.WriteLine("\nWould you like to play again?");
+                Console.WriteLine("[1] Yes");
+                Console.WriteLine("[2] No");
+                string? choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    return true;  // Spela igen
+                }
+                else if (choice == "2")
+                {
+                    return false;  // Avsluta spelet
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please choose between [1] and [2].");
+                }
+            }
         }
 
         // Metod för att välja kategori

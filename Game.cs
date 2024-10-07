@@ -157,7 +157,7 @@ namespace Hangman
             else if (choice == "2")
             {
                 //Avslutar spelet
-                Console.WriteLine("Thanks for playing!");
+                Console.WriteLine("\nThanks for playing!\n");
             }
             else
             {

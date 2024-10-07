@@ -15,6 +15,32 @@ namespace Hangman
             Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
             Console.WriteLine("╚═════════════════╝\n");
 
+            while (true)
+            {
+                Console.WriteLine("[1] Start new game");
+                Console.WriteLine("[2] Exit\n");
+                string? startOrExit = Console.ReadLine();
+
+                if (startOrExit == "1")
+                {
+                    break;
+                }
+                else if (startOrExit == "2")
+                {
+                    Console.WriteLine("\nExiting game. Goodbye!\n");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid input. Please choose between [1] and [2]\n");
+                }
+            }
+
+            Console.Clear();
+            Console.WriteLine("╔═════════════════╗");
+            Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+            Console.WriteLine("╚═════════════════╝\n");
+
             // Ber om namn
             Console.Write("Enter player name: ");
             string? playerName = Console.ReadLine();
@@ -38,6 +64,10 @@ namespace Hangman
 
             //Ber spelaren välja mellan "AI" och att spela själv
             Console.Clear();
+            Console.WriteLine("╔═════════════════╗");
+            Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+            Console.WriteLine("╚═════════════════╝\n");
+
             Console.WriteLine("Choose mode:");
             Console.WriteLine("[1] Play yourself");
             Console.WriteLine("[2] Let AI play\n");
@@ -52,7 +82,7 @@ namespace Hangman
             }
             else
             {
-                player = new AIPlayer(playerName);
+                player = new AIPlayer(playerName + " AI");
             }
 
             //Metoder för att välja kategori och svårighet
@@ -74,7 +104,11 @@ namespace Hangman
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\nChoose a category.\n");
+                Console.WriteLine("╔═════════════════╗");
+                Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+                Console.WriteLine("╚═════════════════╝\n");
+
+                Console.WriteLine("Choose a category.\n");
                 Console.WriteLine("[1] Fruits");
                 Console.WriteLine("[2] Animals");
                 Console.WriteLine("[3] Capital cities\n");
@@ -85,7 +119,7 @@ namespace Hangman
                 if (category == "1" || category == "2" || category == "3")
                 {
                     // Returnerar om det är ett giltigt val
-                    return category; 
+                    return category;
                 }
                 else
                 {
@@ -101,7 +135,11 @@ namespace Hangman
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("\nChoose a difficulty.\n");
+                Console.WriteLine("╔═════════════════╗");
+                Console.WriteLine("║ |H|A|N|G|M|A|N| ║");
+                Console.WriteLine("╚═════════════════╝\n");
+
+                Console.WriteLine("Choose a difficulty.\n");
                 Console.WriteLine("[1] Easy");
                 Console.WriteLine("[2] Medium");
                 Console.WriteLine("[3] Hard\n");

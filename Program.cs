@@ -42,7 +42,7 @@ namespace Hangman
             Console.WriteLine("[1] Play yourself");
             Console.WriteLine("[2] Let AI play");
 
-            string choice = Console.ReadLine();
+            string? choice = Console.ReadLine();
             Player player;
 
             //Använder klassen HumanPlayer eller AIPlayer beroende på spelarens val

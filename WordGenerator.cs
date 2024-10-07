@@ -4,6 +4,8 @@ namespace Hangman
 {
     public class WordGenerator
     {
+
+        //Strings med olika kategorier och svårighetsgrader
         private string[] easyFruits;
         private string[] mediumFruits;
         private string[] hardFruits;
@@ -34,8 +36,10 @@ namespace Hangman
             hardCities = ["ouagadougou", "thimphu", "ulaanbaatar", "antanarivo", "zagreb"];
         }
 
+        //Hämtar hemligt ord utifrån spelarens val
         public string GetRandomWord(string category, string difficulty)
         {
+            //Skapar randomiser
             Random random = new();
 
             switch (category)
@@ -82,10 +86,10 @@ namespace Hangman
                             throw new ArgumentException("Unavailable choice. Please choose between 'easy', 'medium' or 'hard'.");
                     }
 
+                    //Meddelande om man inte valt ett giltigt val
                 default:
                     throw new ArgumentException("Unavailable choice. Please choose between option [1], [2] and [3]");
             }
-
         }
     }
 }

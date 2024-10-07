@@ -12,7 +12,7 @@ namespace Hangman
         public int attemptsLeft;
         private int failedAttempts;
         private List<char> guessedLetters;
-        private CometDrawing cometDrawing;
+        private HangmanDrawings hangmanDrawing;
 
         public Game(Player player, string wordToGuess, string categoryChoice)
         {
@@ -39,9 +39,10 @@ namespace Hangman
             guessedWord = new string('_', wordToGuess.Length);
             attemptsLeft = 10;
             failedAttempts = 0;
-            cometDrawing = new CometDrawing();
+            hangmanDrawing = new HangmanDrawings();
         }
 
+        //Startar spelet
         public void Start()
         {
             Console.Clear();
@@ -53,70 +54,90 @@ namespace Hangman
 
             string message = "Good luck!";
 
+            //Loop som kontrollerar om man har några försök kvar, eller gissat rätt
             while (attemptsLeft > 0 && guessedWord != wordToGuess)
             {
                 Console.Clear();
                 Console.WriteLine($"The category is {categoryName}\n");
-                cometDrawing.DrawCometStage(failedAttempts);
+                hangmanDrawing.DrawHangmanStage(failedAttempts);
                 Console.WriteLine(message);
                 Console.WriteLine("");
                 Console.WriteLine($"Guessed so far: {guessedWord}");
 
+                //Visar gissade bokstäver
                 if (guessedLetters.Count > 0)
                 {
                     Console.WriteLine("Letters already guessed: " + string.Join(", ", guessedLetters));
                 }
 
+                //Tar spelarens gissade bokstav och binder den till variabeln guess
                 char guess = player.Guess();
 
+                //Lägger till gissad bokstav i lista med gissade bokstäver om den inte redan finns
                 if (!guessedLetters.Contains(guess))
                 {
                     guessedLetters.Add(guess);
                 }
 
+                //Kollar om bokstaven är korrekt
                 if (wordToGuess.Contains(guess))
                 {
+
+                    //Lägger till bokstav i gissade ordet
                     guessedWord = RevealGuessedLetters(guess);
 
+                    //Kontrollerar om alla bokstäver i ordet är hittade
                     if (guessedWord == wordToGuess)
                     {
                         Console.WriteLine("\nCongratulations! You have guessed the word!\n");
                         Console.WriteLine($"<| {wordToGuess.ToUpper()} |>");
-                        break; // Spelet är över
+                        break; // Grattis! Spelet är över. Bryter loopen
                     }
 
                     message = "Your guess was correct!";
                 }
+                //Om man gissat fel...
                 else
                 {
                     attemptsLeft--;
                     failedAttempts++;
-                    cometDrawing.DrawCometStage(failedAttempts);
+                    hangmanDrawing.DrawHangmanStage(failedAttempts);
                     message = $"Wrong! You have {attemptsLeft} attempts left.";
                 }
             }
 
+            //Om spelaren har slut på försök och ordet inte är korrekt gissat
             if (guessedWord != wordToGuess)
             {
+
+                //Meddelande om man förlorat
                 Console.WriteLine("\nYou've run out of attempts. The correct word was:");
                 Console.WriteLine($"<| {wordToGuess.ToUpper()} |>");
             }
 
-            AskToPlayAgain(); // Frågar om att spela igen när spelet är över
+            // Frågar om att spela igen när spelet är över
+            AskToPlayAgain();
         }
 
+        //Funktion för att visa korrekt gissade bokstäver
         private string RevealGuessedLetters(char guess)
         {
+            //Skapar en lista och fyller den med bokstäverna som man gissat rätt på
             char[] result = guessedWord.ToCharArray();
 
+            //Loopar igenom det hemliga ordet
             for (int i = 0; i < wordToGuess.Length; i++)
             {
+                //Om den gissade bokstaven matchar en plats i det hemliga ordet...
                 if (wordToGuess[i] == guess)
                 {
+
+                    //Byt ut "_" mot den korrekta bokstaven
                     result[i] = guess;
                 }
             }
 
+            //Returnerar det updaterade "korrekta gissningar" ordet
             return new string(result);
         }
 
@@ -130,16 +151,19 @@ namespace Hangman
             string? choice = Console.ReadLine();
             if (choice == "1")
             {
-                Program.StartGame(player.Name); // Startar spelet om från Program-klassen
+                //Startar om spelet från Program-klassen, behåller namn
+                Program.StartGame(player.Name); 
             }
             else if (choice == "2")
             {
+                //Avslutar spelet
                 Console.WriteLine("Thanks for playing!");
             }
             else
             {
+                //Kontroll av svar. Ställer frågan igen vid ogiltig inmatning
                 Console.WriteLine("Invalid input. Please choose between [1] and [2].");
-                AskToPlayAgain(); // Ställer frågan igen vid ogiltig inmatning
+                AskToPlayAgain(); 
             }
         }
     }

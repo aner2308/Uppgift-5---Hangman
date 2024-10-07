@@ -2,11 +2,13 @@ using System;
 
 namespace Hangman
 {
-    public class CometDrawing
+
+    //En klass som innehåller bilder på en HANGMAN
+    public class HangmanDrawings
     {
         private string[] stages;
 
-        public CometDrawing()
+        public HangmanDrawings()
         {
             stages = new string[]
             {
@@ -112,7 +114,8 @@ namespace Hangman
             };
         }
 
-        public void DrawCometStage(int failedAttempts)
+        //Ritar rätt bild beroende på antal felgissningar
+        public void DrawHangmanStage(int failedAttempts)
         {
             if (failedAttempts >= 0 && failedAttempts < stages.Length)
              {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Uppgift 5 - Hangman")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17801dada1df33194b7e59d3f6862d814d3a3d79")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58941217690e49d763b25302fe55c43839bd2873")]
 [assembly: System.Reflection.AssemblyProductAttribute("Uppgift 5 - Hangman")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Uppgift 5 - Hangman")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

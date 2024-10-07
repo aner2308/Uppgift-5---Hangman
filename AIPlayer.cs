@@ -3,6 +3,7 @@ using System.Threading; // Används för Thread.Sleep
 
 namespace Hangman
 {
+    //Ärver från klassen Player
     public class AIPlayer : Player
     {
         private Random random;
@@ -12,22 +13,31 @@ namespace Hangman
             random = new Random();
         }
 
+        //Override med AI gissning
         public override char Guess()
         {
+
+             // Meddelande med fördröjning för att simulera tänkande
             Console.WriteLine("AI is thinking...");
-            Thread.Sleep(1500); // Fördröjning för att simulera tänkande
+            Thread.Sleep(1500);
 
             char guess;
+
             do
             {
+                // Gissar en slumpad bokstav mellan a-z
                 guess = (char)random.Next('a', 'z' + 1);
             }
-            while (HasAlreadyGuessed(guess)); // Kollar om bokstaven redan gissats
 
+            // Kollar om bokstaven redan gissats
+            while (HasAlreadyGuessed(guess));
+
+            // Fördröjning innan nästa gissning visas
             Console.WriteLine($"AI guesses: {guess}");
-            Thread.Sleep(1500); // Fördröjning innan nästa gissning visas
+            Thread.Sleep(1500); 
 
-            AddGuessedLetter(guess); // Lägger till gissningen i listan
+            // Lägger till gissningen i listan med gissade bokstäver
+            AddGuessedLetter(guess); 
             return guess;
         }
     }

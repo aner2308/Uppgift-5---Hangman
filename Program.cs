@@ -40,7 +40,7 @@ namespace Hangman
             Console.Clear();
             Console.WriteLine("Choose mode:");
             Console.WriteLine("[1] Play yourself");
-            Console.WriteLine("[2] Let AI play");
+            Console.WriteLine("[2] Let AI play\n");
 
             string? choice = Console.ReadLine();
             Player player;

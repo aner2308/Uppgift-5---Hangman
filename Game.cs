@@ -146,7 +146,7 @@ namespace Hangman
         {
             Console.WriteLine("\nWould you like to play again?");
             Console.WriteLine("[1] Yes");
-            Console.WriteLine("[2] No");
+            Console.WriteLine("[2] No\n");
 
             string? choice = Console.ReadLine();
             if (choice == "1")
